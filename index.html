@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz de Planejamento de Carreira - Jovem Aprendiz</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      display: none;
+      margin-bottom: 20px;
+    }
+    .question.active {
+      display: block;
+    }
+    button {
+      padding: 10px;
+      margin-top: 8px;
+      margin-right: 8px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .result {
+      display: none;
+      text-align: center;
+    }
+    .result.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Quiz de Planejamento de Carreira - Jovem Aprendiz</h1>
+
+  <!-- 30 PERGUNTAS -->
+  <div class="question active"><p>1. Você prefere trabalhar:</p>
+    <button onclick="answerQuestion(1,'A')">Com pessoas e clientes</button>
+    <button onclick="answerQuestion(1,'B')">Com organização e documentos</button>
+    <button onclick="answerQuestion(1,'C')">Com números e cálculos</button>
+    <button onclick="answerQuestion(1,'D')">Com tecnologia e computadores</button></div>
+
+  <div class="question"><p>2. Onde você se imagina no futuro?</p>
+    <button onclick="answerQuestion(2,'A')">Em lojas ou vendas</button>
+    <button onclick="answerQuestion(2,'B')">Em um escritório</button>
+    <button onclick="answerQuestion(2,'C')">Em bancos ou finanças</button>
+    <button onclick="answerQuestion(2,'D')">Em empresas de tecnologia</button></div>
+
+  <div class="question"><p>3. O que mais chama sua atenção em um trabalho?</p>
+    <button onclick="answerQuestion(3,'A')">Conversar e ajudar pessoas</button>
+    <button onclick="answerQuestion(3,'B')">Manter tudo organizado</button>
+    <button onclick="answerQuestion(3,'C')">Resolver problemas lógicos</button>
+    <button onclick="answerQuestion(3,'D')">Usar criatividade</button></div>
+
+  <div class="question"><p>4. Qual matéria você mais gosta?</p>
+    <button onclick="answerQuestion(4,'A')">Português</button>
+    <button onclick="answerQuestion(4,'B')">História</button>
+    <button onclick="answerQuestion(4,'C')">Matemática</button>
+    <button onclick="answerQuestion(4,'D')">Informática</button></div>
+
+  <div class="question"><p>5. Como você prefere aprender?</p>
+    <button onclick="answerQuestion(5,'A')">Conversando</button>
+    <button onclick="answerQuestion(5,'B')">Anotando e observando</button>
+    <button onclick="answerQuestion(5,'C')">Praticando exercícios</button>
+    <button onclick="answerQuestion(5,'D')">Testando na prática</button></div>
+
+  <div class="question"><p>6. O que é mais importante no trabalho?</p>
+    <button onclick="answerQuestion(6,'A')">Boa comunicação</button>
+    <button onclick="answerQuestion(6,'B')">Organização</button>
+    <button onclick="answerQuestion(6,'C')">Segurança financeira</button>
+    <button onclick="answerQuestion(6,'D')">Inovação</button></div>
+
+  <div class="question"><p>7. Você prefere trabalhar em:</p>
+    <button onclick="answerQuestion(7,'A')">Mercados ou lojas</button>
+    <button onclick="answerQuestion(7,'B')">Escritórios</button>
+    <button onclick="answerQuestion(7,'C')">Bancos ou logística</button>
+    <button onclick="answerQuestion(7,'D')">Startups de tecnologia</button></div>
+
+  <div class="question"><p>8. Como você lida com pessoas diferentes?</p>
+    <button onclick="answerQuestion(8,'A')">Gosto de conversar com todos</button>
+    <button onclick="answerQuestion(8,'B')">Prefiro lidar com poucos</button>
+    <button onclick="answerQuestion(8,'C')">Só se for necessário</button>
+    <button onclick="answerQuestion(8,'D')">Prefiro lidar com máquinas</button></div>
+
+  <div class="question"><p>9. Qual dessas atividades você prefere?</p>
+    <button onclick="answerQuestion(9,'A')">Atender clientes</button>
+    <button onclick="answerQuestion(9,'B')">Organizar documentos</button>
+    <button onclick="answerQuestion(9,'C')">Fazer cálculos</button>
+    <button onclick="answerQuestion(9,'D')">Usar softwares</button></div>
+
+  <div class="question"><p>10. Como você se sente em falar em público?</p>
+    <button onclick="answerQuestion(10,'A')">Gosto muito</button>
+    <button onclick="answerQuestion(10,'B')">Consigo, mas é difícil</button>
+    <button onclick="answerQuestion(10,'C')">Prefiro evitar</button>
+    <button onclick="answerQuestion(10,'D')">Nunca tentei</button></div>
+
+  <div class="question"><p>11. Qual dessas áreas você acha mais interessante?</p>
+    <button onclick="answerQuestion(11,'A')">Vendas e Marketing</button>
+    <button onclick="answerQuestion(11,'B')">Administração e RH</button>
+    <button onclick="answerQuestion(11,'C')">Finanças e Contabilidade</button>
+    <button onclick="answerQuestion(11,'D')">Tecnologia e Inovação</button></div>
+
+  <div class="question"><p>12. O que você valoriza em uma empresa?</p>
+    <button onclick="answerQuestion(12,'A')">Ambiente colaborativo</button>
+    <button onclick="answerQuestion(12,'B')">Estabilidade</button>
+    <button onclick="answerQuestion(12,'C')">Planos de carreira</button>
+    <button onclick="answerQuestion(12,'D')">Uso de tecnologia</button></div>
+
+  <div class="question"><p>13. Qual é sua maior habilidade?</p>
+    <button onclick="answerQuestion(13,'A')">Comunicação</button>
+    <button onclick="answerQuestion(13,'B')">Organização</button>
+    <button onclick="answerQuestion(13,'C')">Raciocínio lógico</button>
+    <button onclick="answerQuestion(13,'D')">Criatividade</button></div>
+
+  <div class="question"><p>14. O que mais te motiva?</p>
+    <button onclick="answerQuestion(14,'A')">Ajudar pessoas</button>
+    <button onclick="answerQuestion(14,'B')">Ter tudo sob controle</button>
+    <button onclick="answerQuestion(14,'C')">Ganhos financeiros</button>
+    <button onclick="answerQuestion(14,'D')">Inovar e criar</button></div>
+
+  <div class="question"><p>15. Qual ambiente você prefere?</p>
+    <button onclick="answerQuestion(15,'A')">Movimentado, com pessoas</button>
+    <button onclick="answerQuestion(15,'B')">Silencioso e organizado</button>
+    <button onclick="answerQuestion(15,'C')">Com regras e metas</button>
+    <button onclick="answerQuestion(15,'D')">Com liberdade criativa</button></div>
+
+  <div class="question"><p>16. Como você lida com prazos?</p>
+    <button onclick="answerQuestion(16,'A')">Gosto do desafio</button>
+    <button onclick="answerQuestion(16,'B')">Me organizo</button>
+    <button onclick="answerQuestion(16,'C')">Fico ansioso</button>
+    <button onclick="answerQuestion(16,'D')">Improviso</button></div>
+
+  <div class="question"><p>17. Em seu tempo livre, você prefere:</p>
+    <button onclick="answerQuestion(17,'A')">Estar com amigos</button>
+    <button onclick="answerQuestion(17,'B')">Ler e estudar</button>
+    <button onclick="answerQuestion(17,'C')">Fazer contas e jogos de lógica</button>
+    <button onclick="answerQuestion(17,'D')">Explorar tecnologia</button></div>
+
+  <div class="question"><p>18. Como você gosta de resolver problemas?</p>
+    <button onclick="answerQuestion(18,'A')">Conversando</button>
+    <button onclick="answerQuestion(18,'B')">Organizando soluções</button>
+    <button onclick="answerQuestion(18,'C')">Analisando dados</button>
+    <button onclick="answerQuestion(18,'D')">Testando ideias</button></div>
+
+  <div class="question"><p>19. Qual dessas áreas você menos gosta?</p>
+    <button onclick="answerQuestion(19,'A')">Atendimento</button>
+    <button onclick="answerQuestion(19,'B')">Administração</button>
+    <button onclick="answerQuestion(19,'C')">Finanças</button>
+    <button onclick="answerQuestion(19,'D')">Tecnologia</button></div>
+
+  <div class="question"><p>20. Você gosta de liderança?</p>
+    <button onclick="answerQuestion(20,'A')">Sim, muito</button>
+    <button onclick="answerQuestion(20,'B')">Prefiro apoiar</button>
+    <button onclick="answerQuestion(20,'C')">Só se for necessário</button>
+    <button onclick="answerQuestion(20,'D')">Ainda não sei</button></div>
+
+  <div class="question"><p>21. Como você vê mudanças no trabalho?</p>
+    <button onclick="answerQuestion(21,'A')">Gosto de novidades</button>
+    <button onclick="answerQuestion(21,'B')">Prefiro estabilidade</button>
+    <button onclick="answerQuestion(21,'C')">Depende do impacto</button>
+    <button onclick="answerQuestion(21,'D')">Mudança é essencial</button></div>
+
+  <div class="question"><p>22. Qual sua maior qualidade?</p>
+    <button onclick="answerQuestion(22,'A')">Empatia</button>
+    <button onclick="answerQuestion(22,'B')">Disciplina</button>
+    <button onclick="answerQuestion(22,'C')">Responsabilidade</button>
+    <button onclick="answerQuestion(22,'D')">Inovação</button></div>
+
+  <div class="question"><p>23. Qual seu maior desafio?</p>
+    <button onclick="answerQuestion(23,'A')">Falar em público</button>
+    <button onclick="answerQuestion(23,'B')">Ser organizado</button>
+    <button onclick="answerQuestion(23,'C')">Controlar ansiedade</button>
+    <button onclick="answerQuestion(23,'D')">Ficar sem tecnologia</button></div>
+
+  <div class="question"><p>24. Em uma equipe você prefere:</p>
+    <button onclick="answerQuestion(24,'A')">Conversar e liderar</button>
+    <button onclick="answerQuestion(24,'B')">Organizar tarefas</button>
+    <button onclick="answerQuestion(24,'C')">Controlar prazos</button>
+    <button onclick="answerQuestion(24,'D')">Trazer ideias novas</button></div>
+
+  <div class="question"><p>25. Onde você gostaria de crescer?</p>
+    <button onclick="answerQuestion(25,'A')">No comércio</button>
+    <button onclick="answerQuestion(25,'B')">Na administração</button>
+    <button onclick="answerQuestion(25,'C')">No setor financeiro</button>
+    <button onclick="answerQuestion(25,'D')">Na tecnologia</button></div>
+
+  <div class="question"><p>26. Qual dessas ferramentas você prefere?</p>
+    <button onclick="answerQuestion(26,'A')">Telefone/WhatsApp</button>
+    <button onclick="answerQuestion(26,'B')">Planilhas</button>
+    <button onclick="answerQuestion(26,'C')">Calculadora</button>
+    <button onclick="answerQuestion(26,'D')">Computador avançado</button></div>
+
+  <div class="question"><p>27. O que te deixa mais feliz?</p>
+    <button onclick="answerQuestion(27,'A')">Ajudar pessoas</button>
+    <button onclick="answerQuestion(27,'B')">Ver tudo organizado</button>
+    <button onclick="answerQuestion(27,'C')">Receber bons resultados</button>
+    <button onclick="answerQuestion(27,'D')">Criar algo novo</button></div>
+
+  <div class="question"><p>28. Qual tipo de empresa você prefere?</p>
+    <button onclick="answerQuestion(28,'A')">Lojas e mercados</button>
+    <button onclick="answerQuestion(28,'B')">Escritórios</button>
+    <button onclick="answerQuestion(28,'C')">Bancos e logística</button>
+    <button onclick="answerQuestion(28,'D')">Tecnologia e startups</button></div>
+
+  <div class="question"><p>29. Você se imagina no futuro como:</p>
+    <button onclick="answerQuestion(29,'A')">Um vendedor ou comunicador</button>
+    <button onclick="answerQuestion(29,'B')">Um administrador</button>
+    <button onclick="answerQuestion(29,'C')">Um analista financeiro</button>
+    <button onclick="answerQuestion(29,'D')">Um profissional de TI</button></div>
+
+  <div class="question"><p>30. O que é mais importante para você?</p>
+    <button onclick="answerQuestion(30,'A')">Relacionamentos</button>
+    <button onclick="answerQuestion(30,'B')">Estabilidade</button>
+    <button onclick="answerQuestion(30,'C')">Resultados</button>
+    <button onclick="answerQuestion(30,'D')">Inovação</button></div>
+
+  <!-- RESULTADO -->
+  <div class="result">
+    <h2>Resultado do Quiz</h2>
+    <p id="result-text"></p>
+    <button onclick="restartQuiz()">Reiniciar</button>
+  </div>
+</div>
+
+<script>
+  let currentQuestionIndex = 0;
+  let answers = [];
+
+  function answerQuestion(questionNumber, answer) {
+    answers[questionNumber-1] = answer;
+    currentQuestionIndex++;
+    showNextQuestion();
+  }
+
+  function showNextQuestion() {
+    const questions = document.querySelectorAll('.question');
+    if (currentQuestionIndex < questions.length) {
+      questions.forEach((q,i)=>q.classList.toggle('active',i===currentQuestionIndex));
+    } else {
+      showResult();
+    }
+  }
+
+  function showResult() {
+    document.querySelectorAll('.question').forEach(q=>q.style.display='none');
+    const resultDiv=document.querySelector('.result');
+    resultDiv.classList.add('active');
+    const resultText=document.getElementById('result-text');
+
+    const counts={A:0,B:0,C:0,D:0};
+    answers.forEach(a=>counts[a]++);
+
+    const max=Math.max(counts.A,counts.B,counts.C,counts.D);
+    let result="";
+    if(counts.A===max){
+      result="👉 Você tem perfil para áreas de **Atendimento, Vendas e Marketing**.";
+    }else if(counts.B===max){
+      result="👉 Você tem perfil para áreas de **Administração, Escritório e Recursos Humanos**.";
+    }else if(counts.C===max){
+      result="👉 Você tem perfil para áreas de **Finanças, Contabilidade e Logística**.";
+    }else{
+      result="👉 Você tem perfil para áreas de **Tecnologia, Inovação e Informática**.";
+    }
+    resultText.innerText=result;
+  }
+
+  function restartQuiz(){
+    currentQuestionIndex=0;
+    answers=[];
+    document.querySelectorAll('.question').forEach(q=>q.style.display='block');
+    document.querySelector('.result').classList.remove('active');
+    showNextQuestion();
+  }
+</script>
+</body>
+</html>
